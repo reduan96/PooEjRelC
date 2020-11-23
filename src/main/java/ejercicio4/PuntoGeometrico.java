@@ -15,10 +15,8 @@ public class PuntoGeometrico {
     private double y;
 
     public PuntoGeometrico(){
-        
         x = 0;
         y = 0;
-        
     }
     
     public PuntoGeometrico(double x, double y) {

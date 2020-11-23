@@ -31,7 +31,5 @@ public class Prueba {
         System.out.println("valores C.param de prueba2 "
                 + "\nTitulo " + prueba2.getTitulo() + "\nautor "
                 + prueba2.getAutor());
-        //comentario
-
     }
 }
