@@ -22,12 +22,6 @@ public class Empleado {
     public Empleado() {
 
         nif = "00000000Q";
-        sueldoBase = 0;
-        pagoPHoraExtra = 0;
-        horasExtrasMes = 0;
-        tipoIrpf = 0;
-        casado = false;
-        nHijos = 0;
     }
 
     public Empleado(String nif, double sueldoBase, double pagoPHoraExtra,
@@ -101,7 +95,7 @@ public class Empleado {
     @Override
     public String toString() {
 
-        if (casado == true) {
+        if (casado) {
 
             return "Empleado con nif " + nif + ", sueldo base de " + sueldoBase
                     + "eur, se le paga por hora extra " + pagoPHoraExtra + " eur "
@@ -115,4 +109,5 @@ public class Empleado {
                 + ",\ncon " + horasExtrasMes + " horas/mes y un tipo IRPF de "
                 + tipoIrpf + " %,no casado y con " + nHijos + " hijos";
     }
+
 }

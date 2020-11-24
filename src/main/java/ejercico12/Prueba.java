@@ -15,19 +15,19 @@ public class Prueba {
 
         Empleado Pedro = new Empleado();
 
-        String datosEmpleado = Pedro.toString();
-        System.out.println("Pedro: " + datosEmpleado);
+        //String datosEmpleado = Pedro.toString();
+        System.out.println("Pedro: " + Pedro);
         
         Pedro.setNif("09379967K");
         Pedro.setSueldoBase(1300);
-        datosEmpleado = Pedro.toString();
-        System.out.println(datosEmpleado);
+        //datosEmpleado = Pedro.toString();
+        System.out.println(Pedro);
 
         Empleado Marcos = new Empleado("09315687F", 1200, 7.5,
                 15, 5.0, true, 3);
 
-        String datosEmpleado2 = Marcos.toString();
-        System.out.println("Marcos: " + datosEmpleado2);
+        //String datosEmpleado2 = Marcos.toString();
+        System.out.println("Marcos: " + Marcos);
     }
 
 }
