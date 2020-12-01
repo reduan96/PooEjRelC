@@ -21,19 +21,22 @@ public class Cafetera {
     }
 
     public Cafetera(double capacidadMaxima) {
-        
-        this.capacidadMaxima = this.cantidadActual;
+
+        this.capacidadMaxima = capacidadMaxima;
+        this.cantidadActual = capacidadMaxima;
     }
 
     public Cafetera(double capacidadMaxima, double capacidadActual) {
 
-        if (cantidadActual > this.capacidadMaxima) {
-
-            capacidadActual = this.capacidadMaxima;
-        }
-
         this.capacidadMaxima = capacidadMaxima;
-        this.cantidadActual = capacidadActual;
+        
+        if (capacidadActual > capacidadMaxima) {
+
+            this.cantidadActual = capacidadMaxima;
+        } else {
+            
+            this.cantidadActual = capacidadActual;
+        }
     }
 
     public double getCapacidadMaxima() {
@@ -59,12 +62,13 @@ public class Cafetera {
 
     public double servirTaza(double cantidadAServir) {
 
-        if (cantidadActual < cantidadAServir) {
+        if (this.cantidadActual < cantidadAServir) {
 
-            cantidadAServir = cantidadActual;
-            cantidadActual = 0;
+            cantidadAServir = this.cantidadActual;
+            this.cantidadActual = 0;
         } else {
-            cantidadActual -= cantidadAServir;
+            
+            this.cantidadActual -= cantidadAServir;
         }
         return cantidadAServir;
     }
@@ -76,14 +80,20 @@ public class Cafetera {
 
     public double agregarCafe(double cantidadAgregar) {
 
-        if (cantidadAgregar > this.capacidadMaxima) {
+        if ((cantidadAgregar + this.cantidadActual) > this.capacidadMaxima) {
 
-            cantidadAgregar = this.capacidadMaxima;
-        }else{
-            
+            cantidadActual = this.capacidadMaxima;
+        } else {
+
             cantidadActual += cantidadAgregar;
         }
 
         return cantidadAgregar;
     }
+
+    @Override
+    public String toString() {
+        return "Cafetera{" + "capacidadMaxima=" + capacidadMaxima + ", cantidadActual=" + cantidadActual + '}';
+    }
+   
 }
