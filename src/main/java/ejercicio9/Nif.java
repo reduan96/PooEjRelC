@@ -5,40 +5,50 @@
  */
 package ejercicio9;
 
+import java.util.Scanner;
+
 /**
  *
  * @author reduan
  */
 public class Nif {
     
-    //import java.util.Scanner;
-
+    public Scanner teclado = new Scanner(System.in);
+    
     private String numDni;
     private char letraDni;
-
+    
     public Nif() {
-
+        
         this.numDni = "0";
         this.letraDni = 'o';
     }
-
+    
     public Nif(String numDni) {
-
+        
         this.numDni = numDni;
     }
-
-    private void letraAsignada() {
-
-        int i = 0;
+    
+    public void letraAsignada() {
+        
+        int suma = 0;
         int resultado = 0;
-        for (i = 0; i < numDni.length() - 1; i++) {
-
-            i += (i + 1);
+        
+        char[] caracter = new char[numDni.length()];
+        
+        for (int i = 0; i < numDni.length(); i++) {
+            
+            caracter[i] = numDni.charAt(i);
         }
-
-        resultado = i % 23;
-
-        switch(resultado){
+        for (int i = 0; i < caracter.length; i++) {
+            
+            suma = suma + (int) caracter[i];
+        }
+        
+        //System.out.println("suma " + suma);
+        resultado = suma % 23;
+        
+        switch (resultado) {
             
             case 0:
                 this.letraDni = 'T';
@@ -107,21 +117,37 @@ public class Nif {
                 this.letraDni = 'K';
                 break;
             case 22:
-                this.letraDni = 'E'; 
+                this.letraDni = 'E';                
                 break;
         }
     }
-
+    
     public String getNumDni() {
         return numDni;
     }
-
+    
     public char getLetraDni() {
         return letraDni;
     }
     
-//    public static String leer(){
-//        
-//        //Scanner teclado = new Scanner();
-//    }
+    public String leer() {
+        
+        System.out.println("Introudce el número del DNI");
+        this.numDni = teclado.nextLine();
+        
+        return this.numDni;
+    }
+    
+    @Override
+    public String toString() {
+        
+        return "Nif{" + "numDni=" + numDni + "-" + letraDni + '}';
+    }
+    
+    public String mostrar() {
+        
+        return "Nif{" + "numDni=" + numDni + ", letraDni=" + letraDni + '}';
+    }
+    
+    
 }
