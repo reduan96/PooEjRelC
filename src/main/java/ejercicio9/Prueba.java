@@ -13,13 +13,11 @@ public class Prueba {
 
     public static void main(String[] args) {
 
-        Nif Reduan = new Nif("09076396");
+        Nif reduan = new Nif("09076396");
         
-        Reduan.letraAsignada();
-        System.out.println(Reduan.mostrar());
+        System.out.println(reduan.mostrar());
         
-        Reduan.leer();
-        Reduan.letraAsignada();
-        System.out.println(Reduan.toString());
+        reduan.leer();
+        System.out.println(reduan.toString());
     }
 }
